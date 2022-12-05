@@ -27,9 +27,27 @@ export const Component = ({article, color = 'black', children, isHidden = false}
     </Component>
 ```
 ## Типизация хуков
+Для типизации хуков реакта используются дженерики. Кастомные хуки типизируются как обычные функции
+
+```typescript jsx
+  const [value, setValue] = useState(0)
+  const [message, setMessage] = useState<string>()
+
+  const inputRef = useRef<HTMLInputElement>(null)
+  const divRef = useRef<HTMLDivElement>(null)
+
+  return <>
+    <input ref={inputRef} />
+    <div ref={divRef}></div>
+  </>
+```
 
 ## Типизация событий и форм
 
 ## Расширение стандартных компонентов
 
 ## Полезные типы
+
+- ReactNode
+- HTMLInputElement
+- HTMLDivElement
