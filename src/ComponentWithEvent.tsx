@@ -1,4 +1,5 @@
 import {ChangeEvent, MouseEvent } from "react";
+import {ComponentButton} from "./ComponentButton";
 
 export const ComponentWithEvent = () => {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -12,5 +13,6 @@ export const ComponentWithEvent = () => {
   return <>
     <button onClick={handleClick} />
     <input onChange={handleChange} />
+    <ComponentButton color="blue" onClick={handleClick}>Кнопка</ComponentButton>
     </>
 }

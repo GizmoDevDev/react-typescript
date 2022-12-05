@@ -58,12 +58,38 @@ export const Component = ({article, color = 'black', children, isHidden = false}
 ```
 
 ## Расширение стандартных компонентов
+```typescript jsx
+import {HTMLAttributes} from "react";
+
+type Props = HTMLAttributes<HTMLButtonElement> & {
+  color: 'blue' | 'green' | 'gray'
+}
+
+export const ComponentButton = ({color, className, children, ...props}: Props) => {
+  const colorClass = {
+    blue: 'btn-blue',
+    green: 'btn-green',
+    gray: 'btn-gray',
+  }
+  return <button className={`btn-custom ${className} ${colorClass[color]}`} {...props}>
+    {children}
+  </button>
+}
+
+// App.tsx
+...
+  <ComponentButton color="blue" onClick={handleClick}>Кнопка</ComponentButton>
+```
 
 ## Полезные типы
 
 - ReactNode
 - HTMLInputElement
 - HTMLDivElement
+- Event
 - MouseEvent
 - ChangeEvent
 - FormEvent
+- HTMLAttributes
+- ButtonHTMLAttributes
+- InputHTMLAttributes
