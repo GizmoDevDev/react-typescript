@@ -44,6 +44,19 @@ export const Component = ({article, color = 'black', children, isHidden = false}
 
 ## Типизация событий и форм
 
+Для типизации событий и форм полезны интерфейсы эвентов, которые принимает на вход функция обработчик:
+- MouseEvent
+- ChangeEvent
+- FormEvent
+- и др.
+
+```typescript jsx
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+  }
+```
+
 ## Расширение стандартных компонентов
 
 ## Полезные типы
@@ -51,3 +64,6 @@ export const Component = ({article, color = 'black', children, isHidden = false}
 - ReactNode
 - HTMLInputElement
 - HTMLDivElement
+- MouseEvent
+- ChangeEvent
+- FormEvent
